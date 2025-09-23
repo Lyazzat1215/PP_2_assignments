@@ -1,0 +1,106 @@
+Comprehension-Sort-Join-methods-List
+#Without list comprehension you will have to write a for statement with a conditional test inside
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+for x in fruits:
+  if "a" in x:
+    newlist.append(x)
+print(newlist)
+
+#With list comprehension you can do all that with only one line of code
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if "a" in x]
+print(newlist)
+
+#The condition is like a filter that only accepts the items that evaluate to True.
+#Only accept items that are not "apple":
+newlist = [x for x in fruits if x != "apple"] 
+#With no if statement:
+newlist = [x for x in fruits] 
+
+#The iterable can be any iterable object, like a list, tuple, set etc.
+#You can use the range() function to create an iterable:
+newlist = [x for x in range(10)] 
+#Accept only numbers lower than 5:
+newlist = [x for x in range(10) if x < 5] 
+
+#The expression is the current item in the iteration, but it is also the outcome, which you can manipulate before it ends up like a list item in the new list
+#Set the values in the new list to upper case:
+newlist = [x.upper() for x in fruits]
+
+
+# sort 
+# List objects have a sort() method that will sort the list alphanumerically, ascending, by default:
+#Sort the list alphabetically:
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort()
+print(thislist)
+#Sort the list numerically:
+thislist = [100, 50, 65, 82, 23]
+thislist.sort()
+print(thislist)
+
+# To sort descending, use the keyword argument reverse = True:
+#Sort the list descending:
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse = True)
+print(thislist)
+
+# You can also customize your own function by using the keyword argument key = function.
+
+# Copy 
+#You cannot copy a list simply by typing list2 = list1, because: list2will only be a reference to list1, and changes made in list1 will automatically also be made in list2.
+# You can use the built-in List method copy() to copy a list.
+# Make a copy of a list with the copy() method:
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print(mylist)
+
+#Make a copy of a list with the list() method:
+thislist = ["apple", "banana", "cherry"]
+mylist = list(thislist)
+print(mylist)
+
+#Make a copy of a list with the : operator:
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist[:]
+print(mylist)
+
+# Join
+# Join two list:
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list3 = list1 + list2
+print(list3)
+
+# Append list2 into list1:
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+for x in list2:
+  list1.append(x)
+
+print(list1) 
+
+# Use the extend() method to add list2 at the end of list1:
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+list1.extend(list2)
+print(list1)
+
+# Methods 
+Method	Description
+append()	Adds an element at the end of the list
+clear()	Removes all the elements from the list
+copy()	Returns a copy of the list
+count()	Returns the number of elements with the specified value
+extend()	Add the elements of a list (or any iterable), to the end of the current list
+index()	Returns the index of the first element with the specified value
+insert()	Adds an element at the specified position
+pop()	Removes the element at the specified position
+remove()	Removes the item with the specified value
+reverse()	Reverses the order of the list
+sort()	Sorts the list

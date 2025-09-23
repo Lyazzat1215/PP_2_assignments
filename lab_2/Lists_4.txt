@@ -1,0 +1,41 @@
+Remove- Loop List Items 
+#Remove "banana":
+thislist = ["apple", "banana", "cherry"]
+thislist.remove("banana")
+print(thislist)
+
+#Remove the first occurrence of "banana":
+thislist = ["apple", "banana", "cherry", "banana", "kiwi"]
+thislist.remove("banana")
+print(thislist)
+
+#The pop() method removes the specified index.
+
+#The del keyword also removes the specified index:
+#The clear() method empties the list.
+#The list still remains, but it has no content.
+
+# Loop list
+#You can loop through the list items by using a for loop:
+thislist = ["apple", "banana", "cherry"]
+for x in thislist:
+  print(x)
+
+#Use the range() and len() functions to create a suitable iterable
+#Print all items by referring to their index number:
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+  print(thislist[i]) 
+
+#The iterable created in the example above is [0, 1, 2].
+
+#Print all items, using a while loop to go through all the index numbers
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+  print(thislist[i])
+  i = i + 1
+
+#A short hand for loop that will print all items in a list:
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist] 
